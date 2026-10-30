@@ -1,0 +1,47 @@
+//Max Adkins and Tien Thinh Tran
+//4/30/2026
+//TCES 330
+//
+
+module ALU (A, B, S, Q);
+
+  input [2:0] S;
+  input [15:0] A, B;
+  output logic [15:0] Q;
+
+  always_comb begin
+    case (S)
+     3'b000: Q=16'b0;
+     3'b001: Q= A+B;
+     3'b010: Q= A-B;
+     3'b011: Q=A;
+     3'b100: Q=A^B;
+     3'b101: Q=A|B;
+     3'b110: Q=A&B;
+     3'b111: Q=A+1;
+    endcase
+  end
+endmodule
+
+
+module ALU_tb;
+ logic [2:0] S;
+ logic [15:0] A, B;
+ logic [15:0] Q;
+ 
+  ALU DUT (A, B, S, Q);
+
+	initial begin
+	
+  		for (int i = 0; i<8; i++) begin
+			S=i;
+   			A=$urandom_range(15, 0); B=$urandom_range(15, 0);
+			#50;
+		end
+	end
+	initial begin
+		$display ("\t", "S", "\t", "A", "\t", "B", "\t", "Q");
+		$monitor ("\t", S, "\t", A, "\t", B, "\t", Q);
+ 	end
+
+endmodule

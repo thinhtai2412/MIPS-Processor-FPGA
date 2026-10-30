@@ -1,0 +1,10 @@
+module IR(Clk, data, IR_ld, IR_Out);
+    input logic Clk;
+    input logic [15:0] data;
+    input logic IR_ld;
+    output logic [15:0] IR_Out;
+
+    always_ff @(posedge Clk) begin
+        if (IR_ld) IR_Out <= data;
+    end
+endmodule

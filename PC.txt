@@ -1,0 +1,11 @@
+module PC(Clk, PC_clr, PC_up, PC_Out);
+    input logic PC_clr, PC_up;
+    output logic [6:0] PC_Out;
+
+    always_ff @(posedge Clk) begin
+        if (PC_clr) begin
+            PC_Out <= 7'd0;
+        end
+        else if (PC_up) PC_Out <= PC_Out + 1'b1;
+    end
+endmodule
