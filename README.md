@@ -47,3 +47,13 @@ This repository highlights the modules I contributed to a collaborative MIPS-ins
 ## Academic Context
 
 Developed as part of Digital System Design coursework at the University of Washington.
+
+## FPGA Hardware Demonstration
+
+The project was implemented and demonstrated on an Intel/Altera DE2-115 FPGA development board.
+
+The demonstration video shows the hardware running with numerical outputs displayed on the board's seven-segment displays.
+
+The hardware test and video recording were performed by my project teammate.
+
+[Watch FPGA Demonstration](FPGA_Demo.mp4)
